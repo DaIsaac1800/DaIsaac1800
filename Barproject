@@ -1,0 +1,28 @@
+#Defines global variables
+price = 0.00
+#Define Menu as a Dictoniare
+bars_prices = {'Picnic': 3.00, 'Milk': 2.50, 'Caramel': 2.70}
+
+#Function to as a question using the parameters of the question and which dictionary you want to use
+def shopping_cart(question, menu):
+  cart = []
+  print(menu)
+  while True:
+    #asks the question and sets as a local variable
+    item = input(question)
+    item == item.strip().lower().capitalize()
+    #checks if item is in list menu, then adds to list 'cart'
+    if item in menu:
+      print("{} has been added to your cart".format(item))
+      cart.append(menu[item])
+    elif item = "exit":
+      break
+    elif item = "cart":
+      print("{} is in your cart".format(cart))
+    else:
+      print("Please choose a item from the menu")
+  return cart
+bars = shopping_cart("What bars do you want? Type 'Exit' to checkout, type 'Cart' to view cart. ", bars_prices)
+for bar in bars:
+  price += bar
+print("Your Total is ${:.2}".format(price))
